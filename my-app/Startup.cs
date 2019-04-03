@@ -27,7 +27,9 @@ namespace my_app
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                var who = Environment.GetEnvironmentVariable("MY_KEY") ?? "World";
+
+                await context.Response.WriteAsync($"Hello {who}!");
             });
         }
     }

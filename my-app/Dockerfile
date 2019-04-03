@@ -13,4 +13,7 @@ RUN dotnet publish -c Release -o out
 FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
 COPY --from=build-env /app/out .
+
+ENV MY_KEY=Docker
+
 ENTRYPOINT ["dotnet", "my-app.dll"]
