@@ -15,5 +15,6 @@ spec:
       containers:
       - name: my-app
         image: kubesreg.azurecr.io/my-app:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
